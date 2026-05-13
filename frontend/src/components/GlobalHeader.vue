@@ -4,7 +4,7 @@
       <div class="header-left">
         <RouterLink to="/" class="logo-link">
           <div class="logo-wrapper">
-            <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
+            <img src="@/assets/logo.svg" alt="Logo" class="logo-img" />
             <h1 class="site-title">AI热点&文章创作器</h1>
           </div>
         </RouterLink>

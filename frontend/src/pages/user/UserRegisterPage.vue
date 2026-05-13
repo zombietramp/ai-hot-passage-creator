@@ -6,9 +6,9 @@
         <div class="brand-bg"></div>
         <div class="brand-content">
           <div class="brand-logo">
-            <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
+            <img src="@/assets/logo.svg" alt="Logo" class="logo-img" />
           </div>
-          <h1 class="brand-title">AI 爆款文章创作器</h1>
+          <h1 class="brand-title">AI 热点 &&AI 爆款文章创作器</h1>
           <p class="brand-subtitle">让每个人都能写出 10万+ 文章</p>
           <div class="brand-features">
             <div class="feature-item">
@@ -26,18 +26,18 @@
           </div>
         </div>
       </div>
-      
+
       <!-- 右侧表单区域 -->
       <div class="form-section">
         <div class="form-card">
           <h2 class="form-title">创建账号</h2>
           <p class="form-subtitle">注册开启您的 AI 创作之旅</p>
-          
+
           <a-form :model="formState" name="basic" autocomplete="off" @finish="handleSubmit" class="register-form">
             <a-form-item name="userAccount" :rules="[{ required: true, message: '请输入账号' }]">
-              <a-input 
-                v-model:value="formState.userAccount" 
-                placeholder="请输入账号" 
+              <a-input
+                v-model:value="formState.userAccount"
+                placeholder="请输入账号"
                 size="large"
                 class="form-input"
               >
@@ -53,9 +53,9 @@
                 { min: 8, message: '密码不能小于 8 位' },
               ]"
             >
-              <a-input-password 
-                v-model:value="formState.userPassword" 
-                placeholder="请输入密码" 
+              <a-input-password
+                v-model:value="formState.userPassword"
+                placeholder="请输入密码"
                 size="large"
                 class="form-input"
               >
@@ -72,9 +72,9 @@
                 { validator: validateCheckPassword },
               ]"
             >
-              <a-input-password 
-                v-model:value="formState.checkPassword" 
-                placeholder="请确认密码" 
+              <a-input-password
+                v-model:value="formState.checkPassword"
+                placeholder="请确认密码"
                 size="large"
                 class="form-input"
               >
@@ -83,14 +83,14 @@
                 </template>
               </a-input-password>
             </a-form-item>
-            
+
             <a-form-item>
               <a-button type="primary" html-type="submit" size="large" block class="submit-btn">
                 注册
               </a-button>
             </a-form-item>
           </a-form>
-          
+
           <div class="form-footer">
             <span class="footer-text">已有账号？</span>
             <RouterLink to="/user/login" class="login-link">立即登录</RouterLink>
@@ -375,19 +375,19 @@ const handleSubmit = async (values: API.UserRegisterRequest) => {
     min-height: auto;
     border-radius: var(--radius-xl);
   }
-  
+
   .brand-section {
     padding: 32px 24px;
   }
-  
+
   .brand-title {
     font-size: 22px;
   }
-  
+
   .brand-features {
     display: none;
   }
-  
+
   .form-section {
     padding: 32px 24px;
   }

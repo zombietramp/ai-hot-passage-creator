@@ -6,10 +6,10 @@
         <div class="brand-bg"></div>
         <div class="brand-content">
           <div class="brand-logo">
-            <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
+            <img src="@/assets/logo.svg" alt="Logo" class="logo-img" />
           </div>
-          <h1 class="brand-title">AI 爆款文章创作器</h1>
-          <p class="brand-subtitle">让每个人都能写出 10万+ 文章</p>
+          <h1 class="brand-title">AI热点 && AI 爆款文章创作器</h1>
+          <p class="brand-subtitle">让每个人都能获取全球最新的AI热点新闻 && 写出 10万+ 文章</p>
           <div class="brand-features">
             <div class="feature-item">
               <CheckCircleOutlined class="feature-check" />
@@ -26,18 +26,18 @@
           </div>
         </div>
       </div>
-      
+
       <!-- 右侧表单区域 -->
       <div class="form-section">
         <div class="form-card">
           <h2 class="form-title">欢迎回来</h2>
           <p class="form-subtitle">登录您的账号继续创作</p>
-          
+
           <a-form :model="formState" name="basic" autocomplete="off" @finish="handleSubmit" class="login-form">
             <a-form-item name="userAccount" :rules="[{ required: true, message: '请输入账号' }]">
-              <a-input 
-                v-model:value="formState.userAccount" 
-                placeholder="请输入账号" 
+              <a-input
+                v-model:value="formState.userAccount"
+                placeholder="请输入账号"
                 size="large"
                 class="form-input"
               >
@@ -53,9 +53,9 @@
                 { min: 8, message: '密码长度不能小于 8 位' },
               ]"
             >
-              <a-input-password 
-                v-model:value="formState.userPassword" 
-                placeholder="请输入密码" 
+              <a-input-password
+                v-model:value="formState.userPassword"
+                placeholder="请输入密码"
                 size="large"
                 class="form-input"
               >
@@ -64,14 +64,14 @@
                 </template>
               </a-input-password>
             </a-form-item>
-            
+
             <a-form-item>
               <a-button type="primary" html-type="submit" size="large" block class="submit-btn">
                 登录
               </a-button>
             </a-form-item>
           </a-form>
-          
+
           <div class="form-footer">
             <span class="footer-text">还没有账号？</span>
             <RouterLink to="/user/register" class="register-link">立即注册</RouterLink>
@@ -344,19 +344,19 @@ const handleSubmit = async (values: any) => {
     min-height: auto;
     border-radius: var(--radius-xl);
   }
-  
+
   .brand-section {
     padding: 32px 24px;
   }
-  
+
   .brand-title {
     font-size: 22px;
   }
-  
+
   .brand-features {
     display: none;
   }
-  
+
   .form-section {
     padding: 32px 24px;
   }

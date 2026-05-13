@@ -3,7 +3,7 @@
     <div class="brand-bg"></div>
     <div class="brand-content">
       <div class="brand-logo">
-        <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
+        <img src="@/assets/logo.svg" alt="Logo" class="logo-img" />
       </div>
       <h1 class="brand-title">AI热点&爆款文章创作器</h1>
       <p class="brand-subtitle">实时获取AI热点&让每个人都能写出 10万+ 文章</p>
