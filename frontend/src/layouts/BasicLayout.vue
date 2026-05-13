@@ -1,30 +1,34 @@
 <template>
-  <a-layout class="basic-layout">
-    <!-- 顶部导航栏 -->
-    <GlobalHeader />
-    <!-- 主要内容区域 -->
-    <a-layout-content class="main-content">
+  <div class="app-shell">
+    <AppSidebar />
+    <main class="main-content">
       <router-view />
-    </a-layout-content>
-    <!-- 底部版权信息 -->
-    <GlobalFooter />
-  </a-layout>
+    </main>
+  </div>
 </template>
 
 <script setup lang="ts">
-import GlobalHeader from '@/components/GlobalHeader.vue'
-import GlobalFooter from '@/components/GlobalFooter.vue'
+import AppSidebar from '@/components/AppSidebar.vue'
 </script>
 
 <style scoped>
-.basic-layout {
-  background: none;
+.app-shell {
+  display: flex;
+  min-height: 100vh;
 }
 
 .main-content {
-  width: 100%;
+  flex: 1;
+  margin-left: 220px;
   padding: 0;
-  background: none;
-  margin: 0;
+  min-height: 100vh;
+  transition: margin-left 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding-bottom: 56px;
+  }
 }
 </style>

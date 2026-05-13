@@ -38,11 +38,11 @@ RUN addgroup -g 1000 appuser && \
 USER appuser
 
 # 暴露端口
-EXPOSE 8123
+EXPOSE 8880
 
 # 健康检查
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-    CMD curl -f http://localhost:8123/api/health/ || exit 1
+    CMD curl -f http://localhost:8880/ai-hot/api/health/ || exit 1
 
 # JVM 优化参数
 ENV JAVA_OPTS="-Xms512m -Xmx1024m -XX:+UseG1GC -XX:MaxGCPauseMillis=200"

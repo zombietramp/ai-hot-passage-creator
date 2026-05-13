@@ -1,13 +1,13 @@
-# AI 爆款文章创作器 ✍️
+# AI全球热点&AI爆款文章创作器 ✍️
 
 <div align="center">
 
-**AI 爆款文章创作器**
+**AI全球热点&AI爆款文章创作器**
 
-基于多智能体协作，自动完成从选题、大纲、正文到配图的全流程图文创作
+基于AI大佬卡兹克提供的ai热点数据，采集到自己系统中，可以基于多智能体协作，自动完成从选题、大纲、正文到配图的全流程图文创作
 
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.9-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Spring AI Alibaba](https://img.shields.io/badge/Spring%20AI%20Alibaba-1.1.0-FF6A00?style=flat-square&logo=spring&logoColor=white)
+![Spring AI Alibaba](https://img.shields.io/badge/Spring%20AI%20Alibaba-1.1.2.0-FF6A00?style=flat-square&logo=spring&logoColor=white)
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
 ![JDK](https://img.shields.io/badge/JDK-21+-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
@@ -16,7 +16,9 @@
 
 ## 🏗 项目简介
 
-AI 爆款文章创作器是一个基于 **Spring AI Alibaba** 构建的智能图文创作平台，通过 **5 个智能体协作** 完成从选题到图文文章的全自动创作，每个阶段都支持用户介入，实现人机协作的创作体验。
+AI全球热点 & AI爆款文章创作器是一个基于 **Spring AI Alibaba** 构建的智能图文创作平台，实时采集卡兹卡大神提供的全球AI热点，
+通过 **5 个智能体协作** 完成从选题到图文文章的全自动创作，
+每个阶段都支持用户介入，实现人机协作的创作体验。
 
 ```
 阶段1: 选题 → 生成 3-5 个标题方案 → 用户选择
@@ -39,14 +41,14 @@ AI 爆款文章创作器是一个基于 **Spring AI Alibaba** 构建的智能图
 
 ### 智能体协作
 
-| 智能体 | 功能 | 说明 |
-|--------|------|------|
-| Agent 1 | 标题生成 | 根据选题生成 3-5 个标题方案供用户选择 |
-| Agent 2 | 大纲生成 | 根据标题生成文章大纲（流式输出） |
+| 智能体 | 功能 | 说明                       |
+|--------|------|--------------------------|
+| Agent 1 | 标题生成 | 根据选题生成 3-5 个标题方案供用户选择    |
+| Agent 2 | 大纲生成 | 根据标题生成文章大纲（流式输出）         |
 | Agent 3 | 正文生成 | 根据大纲生成 Markdown 正文（流式输出） |
-| Agent 4 | 配图分析 | 分析正文内容，生成配图需求 |
-| Agent 5 | 配图生成 | 获取图片并上传到 COS |
-| 合成 | 合并图文 | 将配图插入正文生成完整图文 |
+| Agent 4 | 配图分析 | 分析正文内容，生成配图需求            |
+| Agent 5 | 配图生成 | 获取图片并上传到 COS/本地文件夹       |
+| 合成 | 合并图文 | 将配图插入正文生成完整图文            |
 
 ### 配图方式（策略模式）
 
@@ -66,7 +68,7 @@ AI 爆款文章创作器是一个基于 **Spring AI Alibaba** 构建的智能图
 
 ### 文章风格
 
-- 🔬 科技风格 - 专业严谨
+- 🔬 科技风格 - 专业严谨（数字生命卡兹克写作skill）
 - 💝 情感风格 - 温暖感人  
 - 📚 教育风格 - 通俗易懂
 - 😄 轻松幽默 - 诙谐有趣
@@ -103,7 +105,7 @@ AI 爆款文章创作器是一个基于 **Spring AI Alibaba** 构建的智能图
 | 技术 | 版本 | 说明 |
 |------|------|------|
 | Spring Boot | 3.5.9 | Web 框架 |
-| Spring AI Alibaba | 1.1.0 | 多智能体编排框架 |
+| Spring AI Alibaba | 1.1.2.0 | 多智能体编排框架 |
 | DashScope | - | 通义千问大模型 |
 | MyBatis-Flex | 1.11.1 | ORM 框架 |
 | MySQL | 8.0 | 数据存储 |
@@ -175,7 +177,7 @@ tencent:
 mvn spring-boot:run
 ```
 
-接口文档：http://localhost:8567/api/doc.html
+接口文档：http://localhost:8880/ai-hot/api/doc.html
 
 ### 4. 启动前端
 
@@ -221,13 +223,13 @@ docker compose -f docker-compose.china.yml up -d --build
 
 ### 服务端口
 
-| 服务 | 端口 | 说明 |
-|------|------|------|
-| 前端 | 80 | 访问地址：http://localhost |
-| 后端 | 8123 | API 接口：http://localhost:8123/api |
-| 接口文档 | 8123 | http://localhost:8123/api/doc.html |
-| MySQL | 不暴露 | 仅内部网络访问（可选暴露到 13306） |
-| Redis | 不暴露 | 仅内部网络访问（可选暴露到 16379） |
+| 服务 | 端口 | 说明                                        |
+|------|------|-------------------------------------------|
+| 前端 | 80 | 访问地址：http://localhost                     |
+| 后端 | 8123 | API 接口：http://localhost:8880/ai-hot/api   |
+| 接口文档 | 8123 | http://localhost:8880/ai-hot/api/doc.html |
+| MySQL | 不暴露 | 仅内部网络访问（可选暴露到 13307）                      |
+| Redis | 不暴露 | 仅内部网络访问（可选暴露到 16379）                      |
 
 > **安全说明**：MySQL 和 Redis 默认不暴露端口到宿主机，仅通过 Docker 内部网络访问。如需从宿主机连接数据库进行调试，可在 `docker-compose.yml` 中取消相应 `ports` 注释。
 
@@ -269,63 +271,117 @@ docker compose down -v
 
 ## 📁 项目结构
 
+项目采用 Maven 多模块架构，分为 common（公共模块）、business（业务模块）、web（接口模块）三层：
+
 ```
-├── src/main/java/com/yupi/template/
-│   ├── agent/                       # 智能体模块
-│   │   ├── agents/                  # 各智能体实现
-│   │   │   ├── TitleGeneratorAgent.java
-│   │   │   ├── OutlineGeneratorAgent.java
-│   │   │   ├── ContentGeneratorAgent.java
-│   │   │   ├── ImageAnalyzerAgent.java
-│   │   │   └── ContentMergerAgent.java
-│   │   ├── parallel/                # 并行配图生成
-│   │   │   └── ParallelImageGenerator.java
-│   │   ├── config/                  # 智能体配置
-│   │   ├── context/                 # 流式处理上下文
-│   │   ├── tools/                   # 智能体工具
-│   │   └── ArticleAgentOrchestrator.java
-│   ├── annotation/                  # 自定义注解（@AgentExecution）
-│   ├── aop/                         # AOP 切面（执行日志记录）
-│   ├── config/                      # 配置类（COS、Pexels、Mermaid 等）
-│   ├── constant/                    # 常量（PromptConstant、ArticleConstant）
-│   ├── controller/                  # 控制器
-│   ├── exception/                   # 异常处理
-│   ├── manager/                     # 管理器（SseEmitterManager）
-│   ├── mapper/                      # MyBatis Mapper
-│   ├── model/
-│   │   ├── dto/                     # 数据传输对象
-│   │   │   ├── article/             # ArticleState、ArticleCreateRequest 等
-│   │   │   └── image/               # ImageData、ImageRequest
-│   │   ├── entity/                  # 实体类
-│   │   ├── enums/                   # 枚举（ImageMethodEnum、ArticleStyleEnum）
-│   │   └── vo/                      # 视图对象
-│   ├── service/                     # 业务服务
-│   │   ├── impl/                    # 服务实现
-│   │   ├── ArticleAgentService.java # 智能体编排
-│   │   ├── ImageServiceStrategy.java# 配图策略选择器
-│   │   ├── CosService.java          # COS 上传
-│   │   ├── PexelsService.java       # Pexels 图库
-│   │   ├── NanoBananaService.java   # Gemini AI 生图
-│   │   ├── MermaidService.java      # Mermaid 流程图
-│   │   ├── IconifyService.java      # Iconify 图标
-│   │   ├── EmojiPackService.java    # 表情包搜索
-│   │   └── SvgDiagramService.java   # SVG 示意图
-│   └── utils/                       # 工具类
-├── frontend/                        # 前端项目
+ai-hot-passage-creator/
+├── pom.xml                                    # 父 POM，统一依赖管理
+├── Dockerfile                                 # Docker 镜像构建
+├── docker-compose.yml                         # Docker 编排（MySQL + Redis + 前后端）
+├── start.sh                                   # 一键启动脚本
+│
+├── ai-hot-article-creator-common/             # 公共模块：模型定义、常量、异常、工具
+│   └── src/main/java/ai/shizhongying/template/
+│       ├── common/                            # 通用响应（BaseResponse、ResultUtils）
+│       ├── constant/                          # 常量（PromptConstant、ArticleConstant、UserConstant）
+│       ├── exception/                         # 全局异常处理（BusinessException、ErrorCode）
+│       ├── model/
+│       │   ├── dto/                           # 数据传输对象
+│       │   │   ├── article/                   # ArticleState、ArticleCreateRequest 等
+│       │   │   ├── hot/                       # 热点相关请求
+│       │   │   ├── image/                     # ImageData、ImageRequest
+│       │   │   └── user/                      # 用户相关请求
+│       │   ├── entity/                        # 数据库实体（User、Article、AgentLog 等）
+│       │   ├── enums/                         # 枚举（ImageMethodEnum、ArticleStyleEnum 等）
+│       │   └── vo/                            # 视图对象（ArticleVO、LoginUserVO 等）
+│       └── utils/                             # 工具类（GsonUtils）
+│
+├── ai-hot-article-creator-business/           # 业务模块：核心逻辑、智能体、服务
+│   └── src/main/java/ai/shizhongying/template/
+│       ├── agent/                             # 智能体模块
+│       │   ├── agents/                        # 各智能体实现
+│       │   │   ├── TitleGeneratorAgent.java   # Agent 1：标题生成
+│       │   │   ├── OutlineGeneratorAgent.java # Agent 2：大纲生成
+│       │   │   ├── ContentGeneratorAgent.java # Agent 3：正文生成
+│       │   │   ├── ImageAnalyzerAgent.java    # Agent 4：配图分析
+│       │   │   └── ContentMergerAgent.java    # Agent 5：图文合成
+│       │   ├── parallel/                      # 并行配图生成（ParallelImageGenerator）
+│       │   ├── config/                        # 智能体配置（AgentConfig）
+│       │   ├── context/                       # 流式处理上下文（StreamHandlerContext）
+│       │   ├── tools/                         # 智能体工具（ImageGenerationTool）
+│       │   └── ArticleAgentOrchestrator.java  # StateGraph 编排器
+│       ├── annotation/                        # 自定义注解（@AgentExecution、@AuthCheck）
+│       ├── aop/                               # AOP 切面（执行日志记录、权限拦截）
+│       ├── config/                            # 配置类（COS、Pexels、Mermaid、Stripe 等）
+│       ├── manager/                           # 管理器（SseEmitterManager）
+│       ├── mapper/                            # MyBatis-Flex Mapper
+│       ├── service/                           # 业务服务
+│       │   ├── impl/                          # 服务实现
+│       │   ├── ArticleAgentService.java       # 智能体编排服务
+│       │   ├── ImageServiceStrategy.java      # 配图策略选择器
+│       │   ├── CosService.java                # 腾讯云 COS 上传
+│       │   ├── PexelsService.java             # Pexels 图库检索
+│       │   ├── NanoBananaService.java         # Gemini AI 生图
+│       │   ├── MermaidService.java            # Mermaid 流程图生成
+│       │   ├── IconifyService.java            # Iconify 图标检索
+│       │   ├── EmojiPackService.java          # 表情包搜索
+│       │   ├── SvgDiagramService.java         # SVG 示意图生成
+│       │   ├── CrawlerService.java            # 热点爬虫服务
+│       │   ├── PaymentService.java            # Stripe 支付服务
+│       │   ├── QuotaService.java              # 配额管理服务
+│       │   └── StatisticsService.java         # 统计分析服务
+│       └── utils/                             # 工具类（SpringContextUtil）
+│
+├── ai-hot-article-creator-web/                # 接口模块：Controller 层 + 启动入口
+│   └── src/main/java/ai/shizhongying/template/
+│       ├── AiMainApplication.java             # Spring Boot 启动类
+│       └── controller/                        # REST 控制器
+│           ├── ArticleController.java         # 文章创作接口
+│           ├── HotArticleController.java      # 热点文章接口
+│           ├── CrawlSourceController.java     # 爬虫源管理接口
+│           ├── UserController.java            # 用户接口
+│           ├── PaymentController.java         # 支付接口
+│           ├── StripeWebhookController.java   # Stripe 回调
+│           ├── StatisticsController.java      # 统计接口
+│           └── HealthController.java          # 健康检查
+│
+├── frontend/                                  # 前端项目（Vue 3 + TypeScript）
 │   ├── src/
-│   │   ├── pages/                   # 页面组件
-│   │   ├── components/              # 公共组件
-│   │   ├── api/                     # API 接口
-│   │   └── stores/                  # 状态管理
+│   │   ├── pages/                             # 页面
+│   │   │   ├── article/                       # 文章模块（创建、列表、详情）
+│   │   │   │   └── components/                # 文章页子组件（输入、大纲编辑、创作中、完成）
+│   │   │   ├── hot/                           # 热点模块（每日热点、全部热点）
+│   │   │   ├── admin/                         # 管理后台（统计、用户管理、爬虫源管理）
+│   │   │   └── user/                          # 用户模块（登录、注册）
+│   │   ├── components/                        # 公共组件（Header、Footer、Sidebar 等）
+│   │   ├── layouts/                           # 布局组件（BasicLayout）
+│   │   ├── api/                               # API 接口定义
+│   │   ├── stores/                            # Pinia 状态管理
+│   │   ├── router/                            # Vue Router 路由配置
+│   │   ├── config/                            # 环境配置
+│   │   ├── constants/                         # 前端常量
+│   │   ├── styles/                            # 全局样式
+│   │   ├── utils/                             # 工具函数（SSE、Markdown 渲染等）
+│   │   └── assets/                            # 静态资源
 │   └── package.json
-├── sql/                             # 数据库脚本
-│   ├── create_table.sql             # 建表语句
-│   ├── init_database.sql            # 初始化数据
-│   └── ...                          # 增量更新脚本
-├── docker-compose.yml               # Docker 编排
-├── start.sh                         # 启动脚本
-└── pom.xml                          # Maven 配置
+│
+├── sql/                                       # 数据库脚本
+│   ├── create_table.sql                       # 建表语句
+│   ├── init_database.sql                      # 初始化数据
+│
+└── data/                                      # 运行时数据
+    └── uploads/                               # 本地上传文件（含 fallback 降级图片）
 ```
+
+### 模块依赖关系
+
+```
+web → business → common
+```
+
+- **common**：零依赖，定义所有模型、枚举、常量、异常，被其他模块引用
+- **business**：依赖 common，包含全部业务逻辑、智能体编排、第三方服务集成
+- **web**：依赖 business，仅负责 HTTP 接口暴露和应用启动
 
 ## 🗄 数据库设计
 
@@ -448,4 +504,4 @@ public class NewMethodService implements ImageSearchService {
 
 ## 👨‍💻 作者
 
-<a href="https://codefather.cn">编程导航学习圈</a>
+super.winner

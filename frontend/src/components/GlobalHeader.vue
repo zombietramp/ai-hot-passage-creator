@@ -5,7 +5,7 @@
         <RouterLink to="/" class="logo-link">
           <div class="logo-wrapper">
             <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
-            <h1 class="site-title">AI文章创作器</h1>
+            <h1 class="site-title">AI热点&文章创作器</h1>
           </div>
         </RouterLink>
       </div>
@@ -79,7 +79,9 @@ import {
   UnorderedListOutlined,
   SettingOutlined,
   CrownOutlined,
-  BarChartOutlined
+  BarChartOutlined,
+  FireOutlined,
+  CloudDownloadOutlined
 } from '@ant-design/icons-vue'
 import { isVip as checkIsVip } from '@/utils/permission'
 
@@ -103,6 +105,11 @@ const originItems = [
     label: '首页',
   },
   {
+    key: '/hot',
+    icon: FireOutlined,
+    label: '热榜',
+  },
+  {
     key: '/create',
     icon: EditOutlined,
     label: '创作',
@@ -116,6 +123,12 @@ const originItems = [
     key: '/admin/userManage',
     icon: SettingOutlined,
     label: '管理',
+    admin: true,
+  },
+  {
+    key: '/admin/crawlSource',
+    icon: CloudDownloadOutlined,
+    label: '抓取源',
     admin: true,
   },
   {

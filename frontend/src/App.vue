@@ -84,6 +84,27 @@ provide('locale', zhCN)
   --glass-blur: blur(12px);
 }
 
+/* 深色主题 */
+[data-theme="dark"] {
+  --color-background: #0a0e1a;
+  --color-background-secondary: #111827;
+  --color-background-tertiary: #1f2937;
+  --color-background-dark: #000000;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-border: #1e293b;
+  --color-border-light: #1e293b;
+  --glass-bg: rgba(10, 14, 26, 0.92);
+  --glass-bg-green: rgba(22, 101, 52, 0.3);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 24px rgba(34, 197, 94, 0.1);
+  --shadow-green: 0 4px 14px rgba(34, 197, 94, 0.15);
+}
+
 /* 全局样式优化 */
 * {
   box-sizing: border-box;

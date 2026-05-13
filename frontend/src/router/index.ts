@@ -13,6 +13,21 @@ const router = createRouter({
       component: HomePage,
     },
     {
+      path: '/hot',
+      name: '精选',
+      component: () => import('@/pages/hot/HotListPage.vue'),
+    },
+    {
+      path: '/all',
+      name: '全部AI动态',
+      component: () => import('@/pages/hot/AllItemsPage.vue'),
+    },
+    {
+      path: '/daily',
+      name: 'AI日报',
+      component: () => import('@/pages/hot/DailyPage.vue'),
+    },
+    {
       path: '/create',
       name: '创作文章',
       component: () => import('@/pages/article/ArticleCreatePage.vue'),
@@ -46,6 +61,11 @@ const router = createRouter({
       path: '/admin/statistics',
       name: '数据分析',
       component: () => import('@/pages/admin/StatisticsPage.vue'),
+    },
+    {
+      path: '/admin/crawlSource',
+      name: '抓取源管理',
+      component: () => import('@/pages/admin/CrawlSourceManagePage.vue'),
     },
     {
       path: '/vip',

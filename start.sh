@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ========================================
-# AI 爆款文章创作器 - 一键启动脚本
+# AI热点资讯 & AI爆款文章创作器 - 一键启动脚本
 # ========================================
 
 set -e
@@ -31,7 +31,7 @@ check_docker() {
     if ! command -v docker &> /dev/null; then
         error "Docker 未安装，请先安装 Docker"
     fi
-    
+
     # 检查 docker compose（新版）或 docker-compose（旧版）
     if docker compose version &> /dev/null; then
         DOCKER_COMPOSE="docker compose"
@@ -40,7 +40,7 @@ check_docker() {
     else
         error "Docker Compose 未安装，请先安装 Docker Compose"
     fi
-    
+
     info "Docker 和 Docker Compose 已安装 ✓"
 }
 
@@ -61,18 +61,18 @@ check_env() {
             error "请先编辑 .env 文件，然后重新运行此脚本"
         fi
     fi
-    
+
     # 检查必需的环境变量
     source .env
-    
+
     if [ -z "$DASHSCOPE_API_KEY" ] || [ "$DASHSCOPE_API_KEY" = "your_dashscope_api_key" ]; then
         error "请在 .env 文件中设置 DASHSCOPE_API_KEY"
     fi
-    
+
     if [ -z "$PEXELS_API_KEY" ] || [ "$PEXELS_API_KEY" = "your_pexels_api_key" ]; then
         error "请在 .env 文件中设置 PEXELS_API_KEY"
     fi
-    
+
     info "环境变量配置检查通过 ✓"
 }
 
@@ -87,9 +87,9 @@ start() {
     info "开始构建并启动服务..."
     info "这可能需要几分钟时间，请耐心等待..."
     echo ""
-    
+
     $DOCKER_COMPOSE up -d --build
-    
+
     echo ""
     info "服务启动成功！"
 }
@@ -98,7 +98,7 @@ start() {
 wait_for_services() {
     info "等待服务启动中..."
     echo ""
-    
+
     # 等待 MySQL 就绪
     info "等待 MySQL 启动..."
     timeout=60
@@ -113,7 +113,7 @@ wait_for_services() {
     done
     echo ""
     info "MySQL 已就绪 ✓"
-    
+
     # 等待 Redis 就绪
     info "等待 Redis 启动..."
     counter=0
@@ -127,7 +127,7 @@ wait_for_services() {
     done
     echo ""
     info "Redis 已就绪 ✓"
-    
+
     # 等待后端就绪
     info "等待后端服务启动..."
     counter=0
@@ -141,7 +141,7 @@ wait_for_services() {
     done
     echo ""
     info "后端服务已就绪 ✓"
-    
+
     # 等待前端就绪
     info "等待前端服务启动..."
     counter=0
@@ -193,7 +193,7 @@ main() {
     echo "  AI 爆款文章创作器 - 一键启动"
     echo "========================================="
     echo ""
-    
+
     check_docker
     check_env
     cleanup

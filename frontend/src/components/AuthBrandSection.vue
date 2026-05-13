@@ -5,8 +5,8 @@
       <div class="brand-logo">
         <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
       </div>
-      <h1 class="brand-title">AI 爆款文章创作器</h1>
-      <p class="brand-subtitle">让每个人都能写出 10万+ 文章</p>
+      <h1 class="brand-title">AI热点&爆款文章创作器</h1>
+      <p class="brand-subtitle">实时获取AI热点&让每个人都能写出 10万+ 文章</p>
       <div class="brand-features">
         <div class="feature-item">
           <CheckCircleOutlined class="feature-check" />

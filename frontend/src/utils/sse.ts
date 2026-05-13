@@ -1,7 +1,8 @@
 /**
  * SSE 工具函数
- * @author <a href="https://codefather.cn">编程导航学习圈</a>
+ * @author super.winner
  */
+import { API_BASE_URL } from '@/config/env'
 
 export interface SSEMessage {
   type: string
@@ -21,13 +22,16 @@ export interface SSEOptions {
 export const connectSSE = (taskId: string, options: SSEOptions): EventSource => {
   const { onMessage, onError, onComplete } = options
 
-  const eventSource = new EventSource(`/api/article/progress/${taskId}`)
+  const eventSource = new EventSource(
+    `${API_BASE_URL}/article/progress/${taskId}`,
+    { withCredentials: true },
+  )
 
   eventSource.onmessage = (event) => {
     try {
       const message: SSEMessage = JSON.parse(event.data)
       onMessage(message)
-      
+
       // 检查是否完成
       if (message.type === 'ALL_COMPLETE' || message.type === 'ERROR') {
         eventSource.close()

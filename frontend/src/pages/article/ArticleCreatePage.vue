@@ -46,13 +46,13 @@
           <div class="input-card">
             <div class="input-header">
               <h1 class="input-title">创作新文章</h1>
-              <p class="input-subtitle">输入选题，AI 帮你生成爆款文章</p>
+              <p class="input-subtitle">输入选题，AI帮你生成爆款文章</p>
             </div>
 
             <div class="input-area">
               <a-textarea
                 v-model:value="topic"
-                placeholder="请输入您想创作的文章选题，例如：2026年AI如何改变职场"
+                placeholder="请输入您想创作的文章选题，例如：2026年AI如何"
                 :rows="6"
                 :maxlength="500"
                 show-count
@@ -71,6 +71,7 @@
                   <a-radio value="emotional">情感风格</a-radio>
                   <a-radio value="educational">教育风格</a-radio>
                   <a-radio value="humorous">轻松幽默</a-radio>
+                  <a-radio value="khazix">卡兹克风格</a-radio>
                 </a-radio-group>
               </div>
 
@@ -1012,7 +1013,7 @@ onBeforeUnmount(() => {
 .sidebar-left {
   background: white;
   border-right: 1px solid var(--color-border);
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;

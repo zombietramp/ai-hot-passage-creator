@@ -7,10 +7,14 @@ import * as paymentController from './paymentController'
 import * as articleController from './articleController'
 import * as statisticsController from './statisticsController'
 import * as healthController from './healthController'
+import * as hotController from './hotController'
+import * as crawlSourceController from './crawlSourceController'
 export default {
   userController,
   paymentController,
   articleController,
   statisticsController,
   healthController,
+  hotController,
+  crawlSourceController,
 }
